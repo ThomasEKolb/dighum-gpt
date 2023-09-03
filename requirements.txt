@@ -1,3 +1,9 @@
-altair
-pandas
 streamlit
+langchain
+pypdf
+openai
+tiktoken
+chromadb
+pdfminer
+wget
+pdfminer.six
