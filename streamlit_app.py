@@ -21,9 +21,9 @@ st.set_page_config(page_title="DigHum GPT", page_icon="🦜")
 st.title("🦜 DigHum GPT")
 
 # these three lines swap the stdlib sqlite3 lib with the pysqlite3 package
-__import__('pysqlite3')
-import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+#__import__('pysqlite3')
+#import sys
+#sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 # Setup memory for contextual conversation
 from langchain.memory.chat_message_histories import StreamlitChatMessageHistory
