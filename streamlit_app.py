@@ -1,9 +1,3 @@
-#from collections import namedtuple
-#import altair as alt
-#import math
-#import pandas as pd
-#import streamlit as st
-
 """
 # Welcome to this tutorial!
 
@@ -18,7 +12,7 @@ openai_api_key = os.getenv('OPENAI_API_KEY')
 import streamlit as st
 
 st.set_page_config(page_title="DigHum GPT", page_icon="🦜")
-st.title("🦜 DigHum GPT")
+st.title("📚 DigHum GPT")
 
 # these three lines swap the stdlib sqlite3 lib with the pysqlite3 package
 __import__('pysqlite3')
@@ -83,6 +77,8 @@ def load_precomputed_embeddings():
     chroma_db = Chroma(persist_directory=persist_directory, embedding_function=embedding)
     return chroma_db.as_retriever()
 
+import time
+
 def setup_retriever():
     load_state = st.text('Downloading DigHum book...')
     book = load_book()
@@ -94,6 +90,9 @@ def setup_retriever():
     # chroma_db = create_embeddings(book_chunks)
     chroma_db_as_retriever = load_precomputed_embeddings()
     load_state.text('Loading precomputed embeddings...done!')
+    time.sleep(1)
+    load_state.empty()
+    load_state = st.markdown('This tool queries the book [Perspectives on Digital Humanism](https://link.springer.com/book/10.1007/978-3-030-86144-5) please ask me anything about it!')
     return chroma_db_as_retriever
 
 retriever = setup_retriever()
@@ -104,7 +103,6 @@ from langchain.chains import ConversationalRetrievalChain
 qa_chain = ConversationalRetrievalChain.from_llm(
     llm, retriever=retriever, memory=memory, verbose=True
 )
-
 if len(msgs.messages) == 0 or st.sidebar.button("Clear message history"):
     msgs.clear()
     msgs.add_ai_message("How can I help you?")
