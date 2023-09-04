@@ -1,6 +1,9 @@
-# Welcome to Streamlit!
+# DigHum Summer School 2023
 
-Edit `/streamlit_app.py` to customize this app to your heart's desire. :heart:
+Welcome to the hands-on session!
 
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
+This repository contains the DigHum GPT app [1] code, which can be used as template for your group project.
+
+Link to this repository: https://github.com/ThomasEKolb/dighum-gpt
+
+[1] https://dighum-gpt-wkicuqwmadwcqjuhwtepya.streamlit.app/
