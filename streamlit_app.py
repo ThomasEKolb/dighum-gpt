@@ -6,7 +6,10 @@ This tutorial code is based on the tutorial apps of streamlit.
 Link: https://github.com/langchain-ai/streamlit-agent/tree/main/streamlit_agent
 """
 
+from my_config import *
+
 import os
+os.environ["OPENAI_API_KEY"] = open_ai_key_from_config_file # workaround to hide the api key
 openai_api_key = os.getenv('OPENAI_API_KEY')
 
 import streamlit as st
