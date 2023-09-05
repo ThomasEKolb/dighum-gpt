@@ -77,8 +77,6 @@ def load_precomputed_embeddings():
     chroma_db = Chroma(persist_directory=persist_directory, embedding_function=embedding)
     return chroma_db.as_retriever()
 
-import time
-
 def setup_retriever():
     load_state = st.text('Downloading DigHum book...')
     book = load_book()
@@ -90,7 +88,6 @@ def setup_retriever():
     # chroma_db = create_embeddings(book_chunks)
     chroma_db_as_retriever = load_precomputed_embeddings()
     load_state.text('Loading precomputed embeddings...done!')
-    time.sleep(1)
     load_state.empty()
     load_state = st.markdown('This tool queries the book [Perspectives on Digital Humanism](https://link.springer.com/book/10.1007/978-3-030-86144-5) please ask me anything about it!')
     return chroma_db_as_retriever
