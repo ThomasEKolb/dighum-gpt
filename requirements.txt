@@ -7,4 +7,3 @@ chromadb
 pdfminer
 wget
 pdfminer.six
-time
