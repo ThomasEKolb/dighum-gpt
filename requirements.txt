@@ -7,5 +7,4 @@ chromadb
 pdfminer
 wget
 pdfminer.six
-pysqlite3-binary
 time
